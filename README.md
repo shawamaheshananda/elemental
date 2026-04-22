@@ -74,3 +74,4 @@ Para criar um novo projeto:
 
 ```bash
 cp -r /apps/template /apps/novo-projeto
+# Atualizado em Tue Apr 21 22:40:20 -03 2026
