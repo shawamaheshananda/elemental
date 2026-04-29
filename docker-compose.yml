@@ -1,16 +1,12 @@
-# Este arquivo é um template base.
-# Copie e ajuste para cada projeto real.
-# Não rode docker compose diretamente no template.
-
 services:
-  app:
+  site:
     image: nginx:alpine
-    container_name: ${PROJECT_NAME}-site
+    container_name: arte-na-cura-site
     volumes:
       - ./site:/usr/share/nginx/html:ro
     restart: unless-stopped
     labels:
       - "traefik.enable=true"
-      - "traefik.http.routers.${PROJECT_NAME}.rule=Host(`${DOMAIN}`)"
-      - "traefik.http.routers.${PROJECT_NAME}.entrypoints=websecure"
-      - "traefik.http.routers.${PROJECT_NAME}.tls.certresolver=letsencrypt"
+      - "traefik.http.routers.artenacura.rule=Host(`dev.artenacura.com`)"
+      - "traefik.http.routers.artenacura.entrypoints=websecure"
+      - "traefik.http.routers.artenacura.tls.certresolver=letsencrypt"
